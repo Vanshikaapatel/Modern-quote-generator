@@ -1,4 +1,4 @@
-# 🌟 Modern Quote Generator
+# 🌟AI-Modern-Quote-Generator
 
 - An AI-powered desktop application built using Python and Tkinter that generates motivational, life, love, success, and happiness quotes with a modern UI.
 - Implemented an AI-inspired quote generation system using NLP-based templates and randomness to dynamically create unique quotes without external APIs.
