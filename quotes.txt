@@ -1,0 +1,88 @@
+# ------------------ QUOTES ------------------ #
+motivational_quotes = [
+    "The best way to predict the future is to create it.",
+    "Success usually comes to those who are too busy to be looking for it.",
+    "Don't watch the clock; do what it does. Keep going.",
+    "Believe you can and you're halfway there.",
+    "Your limitation—it's only your imagination.",
+    "Push yourself, because no one else is going to do it for you.",
+    "Dream it. Wish it. Do it.",
+    "Great things never come from comfort zones.",
+    "Wake up with determination. Go to bed with satisfaction.",
+    "Do something today that your future self will thank you for.",
+    "Doubt kills more dreams than failure ever will.",
+    "The harder you work for something, the greater you'll feel when you achieve it.",
+    "Don't stop when you're tired. Stop when you're done.",
+    "Little things make big days.",
+    "It's going to be hard, but hard does not mean impossible."
+]
+
+life_quotes = [
+    "Life is what happens when you're busy making other plans.",
+    "Get busy living, or get busy dying.",
+    "In the end, we only regret the chances we didn't take.",
+    "Life is really simple, but we insist on making it complicated.",
+    "Life isn't about finding yourself. It's about creating yourself.",
+    "Difficult roads often lead to beautiful destinations.",
+    "Enjoy the little things in life, for one day you may look back and realize they were the big things.",
+    "Life is short, and it is up to you to make it sweet.",
+    "To live is the rarest thing in the world. Most people exist, that is all.",
+    "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+    "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+    "The purpose of our lives is to be happy.",
+    "Life is either a daring adventure or nothing at all.",
+    "Life has no limitations, except the ones you make.",
+    "Live your life and forget your age."
+]
+
+love_quotes = [
+    "Love the one you're with.",
+    "The greatest thing you'll ever learn is just to love and be loved in return.",
+    "Love is composed of a single soul inhabiting two bodies.",
+    "Love is a many-splendored thing.",
+    "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
+    "Love doesn't make the world go round. Love is what makes the ride worthwhile.",
+    "Where there is love there is life.",
+    "To love and be loved is to feel the sun from both sides.",
+    "Love is not about how many days, months, or years you've been together. Love is about how much you love each other every single day.",
+    "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.",
+    "True love stories never have endings.",
+    "Love is when the other person's happiness is more important than your own.",
+    "I saw that you were perfect, and so I loved you. Then I saw that you were not perfect and I loved you even more.",
+    "Love is the bridge between you and everything.",
+    "Love recognizes no barriers. It jumps hurdles, leaps fences, penetrates walls to arrive at its destination full of hope."
+]
+
+friendship_quotes = [
+    "Friendship is the only cement that will ever hold the world together.",
+    "A real friend is one who walks in when the rest of the world walks out.",
+    "Friends are the siblings God never gave us.",
+    "Friendship isn't about who you've known the longest, it's about who walked into your life and said 'I'm here for you'.",
+    "A single rose can be my garden… a single friend, my world.",
+    "Friendship is born at that moment when one person says to another, 'What! You too? I thought I was the only one.'",
+    "There is nothing on this earth more to be prized than true friendship.",
+    "Good friends are like stars. You don't always see them, but you know they're always there.",
+    "A friend is someone who knows all about you and still loves you."
+]
+
+success_quotes = [
+    "Success is not in what you have, but who you are.",
+    "Don't be afraid to give up the good to go for the great.",
+    "Success is walking from failure to failure with no loss of enthusiasm.",
+    "Success is not the key to happiness. Happiness is the key to success.",
+    "The road to success and the road to failure are almost exactly the same.",
+    "Success usually comes to those who are too busy to be looking for it.",
+    "Don't aim for success if you want it; just do what you love and believe in, and it will come naturally.",
+    "To succeed in life, you need two things: ignorance and confidence."
+]
+
+happiness_quotes = [
+    "Happiness is not something ready-made. It comes from your own actions.",
+    "For every minute you are angry you lose sixty seconds of happiness.",
+    "Happiness depends upon ourselves.",
+    "The most important thing is to enjoy your life—to be happy—it's all that matters.",
+    "Happiness is a warm puppy.",
+    "If you want to be happy, be.",
+    "Happiness is not a goal… it's a by-product of a life well-lived.",
+    "The purpose of our lives is to be happy."
+]

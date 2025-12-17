@@ -1,0 +1,34 @@
+{
+    "abc": {
+        "password": "123",
+        "preferences": {
+            "category": "Motivational"
+        }
+    },
+    "abcd": {
+        "password": "111",
+        "preferences": {
+            "category": "Motivational"
+        }
+    },
+    "vanshika": {
+        "password": "2212",
+        "preferences": {
+            "category": "Motivational"
+        }
+    },
+    "me": {
+        "password": "12",
+        "favorites": []
+    },
+    "xyz": {
+        "password": "789",
+        "favorites": [
+            "To love and be loved is to feel the sun from both sides."
+        ]
+    },
+    "muskan": {
+        "password": "@12",
+        "favorites": []
+    }
+}

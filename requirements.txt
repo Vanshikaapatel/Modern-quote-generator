@@ -1,0 +1,5 @@
+pyttsx3
+pyperclip
+Pillow
+matplotlib
+requests
