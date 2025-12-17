@@ -14,6 +14,8 @@ import webbrowser
 import subprocess
 import sys
 import urllib.parse
+import requests
+
 
 # ------------------ QUOTES ------------------ #
 motivational_quotes = [
@@ -103,6 +105,38 @@ happiness_quotes = [
     "Happiness is not a goal… it's a by-product of a life well-lived.",
     "The purpose of our lives is to be happy."
 ]
+
+ai_templates = {
+    "Motivational": [
+        "Believe in yourself and {verb} forward with confidence.",
+        "Your future depends on what you {verb} today.",
+        "Success comes when you {verb} despite challenges.",
+        "Dream big and {verb} without fear."
+    ],
+    "Life": [
+        "Life becomes meaningful when you {verb} every moment.",
+        "Learn to {verb} life as it comes.",
+        "Life teaches us to {verb} and grow."
+    ],
+    "Love": [
+        "Love grows when you {verb} with an open heart.",
+        "To love is to {verb} without conditions."
+    ],
+    "Success": [
+        "Success follows those who {verb} consistently.",
+        "If you want success, {verb} every single day."
+    ],
+    "Happiness": [
+        "Happiness begins when you {verb} yourself.",
+        "Choose to {verb} and let joy follow."
+    ]
+}
+
+ai_verbs = [
+    "move", "grow", "believe", "try", "learn",
+    "focus", "persist", "embrace", "act", "improve"
+]
+
 
 # Enhanced color schemes with maximum contrast for all buttons
 quote_colors = {
@@ -258,6 +292,7 @@ class QuoteApp:
         self.root.title("✨ Modern Quote Generator ✨")
         self.root.geometry("900x700")
         self.root.minsize(800, 600)
+
         
         # Initialize theme and category_var first
         self.theme = "dark"
@@ -585,6 +620,57 @@ class QuoteApp:
         quote = random.choice(quotes.get(category, motivational_quotes))
         self.quote_label.config(text=quote)
         
+    def generate_ai_quote_local(self, category):
+        templates = ai_templates.get(category, ai_templates["Motivational"])
+        template = random.choice(templates)
+        verb = random.choice(ai_verbs)
+        return template.format(verb=verb)
+
+
+    def generate_ai_quote(self, category):
+        API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
+        headers = {
+            "Authorization": "Bearer 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"
+        }
+
+        # 🔥 RANDOMNESS ADD KARNE KE LIYE
+        seed = random.randint(1, 100000)
+        timestamp = int(time.time())
+
+        prompt = (
+            f"Generate a unique, short {category.lower()} quote in simple English. "
+            f"Do not repeat previous quotes. Seed: {seed}. Time: {timestamp}"
+        )
+
+        payload = {
+            "inputs": prompt,
+            "parameters": {
+                "temperature": 0.9,
+                "top_p": 0.95,
+                "max_new_tokens": 40
+            }
+        }
+
+        try:
+            response = requests.post(
+                API_URL,
+                headers=headers,
+                json=payload,
+                timeout=20
+            )
+
+            if response.status_code == 100:
+                result = response.json()
+                text = result[0]["generated_text"]
+                return text.strip()
+            else:
+                return "Believe in yourself and keep moving forward."
+
+        except Exception as e:
+            print("AI Error:", e)
+            return "Every step you take brings you closer to success."
+
+        
         # Update status
         self.status_var.set(f"Displayed new {category} quote")
         
@@ -676,6 +762,15 @@ class QuoteApp:
                                      command=self.speak_quote_with_feedback,
                                      style="Speak.TButton")
         self.speak_button.pack(side="left", expand=True, fill="x", padx=5)
+        
+        self.ai_button = ttk.Button(
+            self.button_row1,
+            text="🤖 AI Quote",
+            command=self.generate_ai_quote_with_feedback,
+            style="Generate.TButton"
+        )
+        self.ai_button.pack(side="left", expand=True, fill="x", padx=5)
+
         
         # Second row of buttons
         self.button_row2 = ttk.Frame(self.buttons_frame)
@@ -820,6 +915,18 @@ class QuoteApp:
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL
         )
+
+    def generate_ai_quote_with_feedback(self):
+        category = self.category_var.get()
+
+        self.action_indicator.config(text="Generating AI quote...")
+        self.status_var.set("AI is generating...")
+
+        quote = self.generate_ai_quote_local(category)
+        self.quote_label.config(text=quote)
+
+        self.root.after(1500, lambda: self.action_indicator.config(text="AI Quote generated!"))
+
 
 
     def save_to_favorites(self):
